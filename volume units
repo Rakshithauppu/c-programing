@@ -1,0 +1,56 @@
+#include<stdio.h>
+main()
+{
+	float D,a,b,c,d;
+	int u,U;
+	printf("Enter volume");
+	scanf("%f",&D);
+	printf("Enter 1 for cubic km\n 2 for cubic m,\n 3 for cubic mm,\n 4 for cubic mm\n");
+	scanf(" %c",&u);
+	if(u=='1')
+	{
+		a=D;
+		b=a*1000000000;
+		c=b*1000000;
+		d=c*1000;
+	}
+	else if(u=='2')
+	{
+		b=D;
+		c=b*1000000;
+		d=c*1000;
+		a=b/1000000000;
+	}
+	else if(u=='3')
+	{
+		c=D;
+		d=c*1000;
+		b=(float)c/1000000;
+		a=(float)b/1000000000;
+	}
+	else if(u=='4')
+	{
+		d=D;
+		c=d/1000;
+		b=c/1000000;
+		a=b/1000000000;
+	}
+	else
+	{
+	printf("Invalid input\n"); 
+	}
+	
+printf("Enter final unit\n");
+scanf(" %c",&U);
+	
+	if(U=='1')
+	printf("The Distance in cubic kilometer is %f\n",a);
+	else if(U=='2')
+	printf("The Distance in cubic meter is %f\n",b);
+	else if(U=='3')
+	printf("The Distance in cubic centimeter is %f\n",c);
+	else if(U=='4')
+	printf("The Distance in cubic millimeter is %f\n",d);
+	else
+	printf("Invalid input");	
+}
